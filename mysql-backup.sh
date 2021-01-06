@@ -34,7 +34,6 @@ cd $BACKUPDIR
 for DATABASE in $DBLIST; do
 	mysqldump -h $HOSTNAME -u $USERNAME --password=$PASSWORD --routines --events $DATABASE > $DATABASE-$TODAY.sql
 	gzip $DATABASE-$TODAY.sql
-	rm $DATABASE-$TODAY.sql
 done
 
 # Backup process - NODATE
@@ -45,5 +44,4 @@ for DATABASE in $DBLIST_NODATE; do
 	fi
 	mysqldump -h $HOSTNAME -u $USERNAME --password=$PASSWORD --routines --events $DATABASE > $DATABASE-$TODAY.sql
 	gzip $DATABASE-$TODAY.sql
-	rm $DATABASE-$TODAY.sql
 done
