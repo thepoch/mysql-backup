@@ -1,0 +1,14 @@
+# Configuration file that contains USERNAME, PASSWORD, BACKUPDIR,
+# DBLIST, and DBLIST_NODATE.
+
+BACKUPDIR=/home/mysql-backup/mysql-backup/BACKUPS
+
+HOSTNAME=localhost
+USERNAME=backups
+PASSWORD="password"
+
+# Space delimited list of databases here. Leave empty (ie "") if you don't need the option
+# enabled.
+
+DBLIST="database1 database4"
+DBLIST_NODATE="database2 database3"
