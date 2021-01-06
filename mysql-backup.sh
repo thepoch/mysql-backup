@@ -39,8 +39,8 @@ done
 # Backup process - NODATE
 #
 for DATABASE in $DBLIST_NODATE; do
-	if [ -f $DATABASE-current.tar.gz ]; then
-		mv $DATABASE-current.tar.gz $DATABASE-previous.tar.gz
+	if [ -f $DATABASE-current.gz ]; then
+		mv $DATABASE-current.gz $DATABASE-previous.gz
 	fi
 	mysqldump -h $HOSTNAME -u $USERNAME --password=$PASSWORD --routines --events $DATABASE > $DATABASE-$TODAY.sql
 	gzip $DATABASE-$TODAY.sql
