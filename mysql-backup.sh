@@ -33,7 +33,7 @@ cd $BACKUPDIR
 #
 for DATABASE in $DBLIST; do
 	mysqldump -h $HOSTNAME -u $USERNAME --password=$PASSWORD --routines --events $DATABASE > $DATABASE-$TODAY.sql
-	gzip $DATABASE-$TODAY.tar.gz $DATABASE-$TODAY.sql
+	gzip $DATABASE-$TODAY.sql
 	rm $DATABASE-$TODAY.sql
 done
 
@@ -44,6 +44,6 @@ for DATABASE in $DBLIST_NODATE; do
 		mv $DATABASE-current.tar.gz $DATABASE-previous.tar.gz
 	fi
 	mysqldump -h $HOSTNAME -u $USERNAME --password=$PASSWORD --routines --events $DATABASE > $DATABASE-$TODAY.sql
-	gzip $DATABASE-current.tar.gz $DATABASE-$TODAY.sql
+	gzip $DATABASE-$TODAY.sql
 	rm $DATABASE-$TODAY.sql
 done
