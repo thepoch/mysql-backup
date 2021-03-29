@@ -18,7 +18,7 @@ backup account:
 
 Then grant the required privileges to all databases:
 
-	GRANT SELECT, LOCK TABLES, SHOW VIEW, EVENT on *.* to 'backups'@'localhost';
+	GRANT SELECT, PROCESS, LOCK TABLES, SHOW VIEW, EVENT on *.* to 'backups'@'localhost';
 
 ## Setup/Installation ##
 
