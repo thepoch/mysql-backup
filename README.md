@@ -73,4 +73,4 @@ Remember to change the directory as well if you are using a different directory.
 
 **THIS WILL DELETE FILES SO USE WITH CAUTION**.
 
-	00 14 * * *	    find /home/mysql-backup/mysql-backup/BACKUPS/ -depth -type f -atime +30 -delete
+	00 14 * * *	    find /home/mysql-backup/mysql-backup/BACKUPS/ -depth -type f -mtime +30 -delete
