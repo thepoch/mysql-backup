@@ -32,7 +32,7 @@ cd $BACKUPDIR
 # Backup process - DATE
 #
 for DATABASE in $DBLIST; do
-	mysqldump -h $HOSTNAME -u $USERNAME --password=$PASSWORD --routines --events $DATABASE > $DATABASE-$TODAY.sql
+	mysqldump -h $HOSTNAME -u $USERNAME --password=$PASSWORD --single-transaction --quick --routines --events $DATABASE > $DATABASE-$TODAY.sql
 	gzip $DATABASE-$TODAY.sql
 done
 
@@ -42,6 +42,6 @@ for DATABASE in $DBLIST_NODATE; do
 	if [ -f $DATABASE-current.sql.gz ]; then
 		mv $DATABASE-current.sql.gz $DATABASE-previous.sql.gz
 	fi
-	mysqldump -h $HOSTNAME -u $USERNAME --password=$PASSWORD --routines --events $DATABASE > $DATABASE-current.sql
+	mysqldump -h $HOSTNAME -u $USERNAME --password=$PASSWORD --single-transaction --quick --routines --events $DATABASE > $DATABASE-current.sql
 	gzip $DATABASE-current.sql
 done
